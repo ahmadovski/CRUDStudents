@@ -1,0 +1,151 @@
+{
+  "items": [
+    {
+      "name": "omid2",
+      "description": "BARGH",
+      "id": "8606"
+    }
+  ],
+  "students": [
+    {
+      "id": "7",
+      "name": "George Miller",
+      "gender": "Male",
+      "fieldOfStudy": "Computer Science",
+      "grade": 76,
+      "graduationYear": 2021,
+      "attendanceRate": 65,
+      "scholarship": true
+    },
+    {
+      "id": "8",
+      "name": "Hannah Baker",
+      "gender": "Female",
+      "fieldOfStudy": "Mechanical Engineering",
+      "grade": 89,
+      "graduationYear": 2024,
+      "attendanceRate": 92,
+      "scholarship": false
+    },
+    {
+      "id": "10",
+      "name": "Julia Roberts",
+      "gender": "Female",
+      "fieldOfStudy": "Computer Science",
+      "grade": 87,
+      "graduationYear": 2020,
+      "attendanceRate": 80,
+      "scholarship": false
+    },
+    {
+      "id": "11",
+      "name": "Kevin Anderson",
+      "gender": "Male",
+      "fieldOfStudy": "Mechanical Engineering",
+      "grade": 83,
+      "graduationYear": 2023,
+      "attendanceRate": 70,
+      "scholarship": false
+    },
+    {
+      "id": "12",
+      "name": "Laura Wilson",
+      "gender": "Female",
+      "fieldOfStudy": "Mathematics",
+      "grade": 91,
+      "graduationYear": 2019,
+      "attendanceRate": 97,
+      "scholarship": true
+    },
+    {
+      "id": "13",
+      "name": "Michael Carter",
+      "gender": "Male",
+      "fieldOfStudy": "Computer Science",
+      "grade": 79,
+      "graduationYear": 2024,
+      "attendanceRate": 60,
+      "scholarship": false
+    },
+    {
+      "id": "14",
+      "name": "Nancy Drew",
+      "gender": "Female",
+      "fieldOfStudy": "Mechanical Engineering",
+      "grade": 85,
+      "graduationYear": 2021,
+      "attendanceRate": 88,
+      "scholarship": true
+    },
+    {
+      "id": "15",
+      "name": "Oliver Stone",
+      "gender": "Male",
+      "fieldOfStudy": "Mathematics",
+      "grade": 82,
+      "graduationYear": 2023,
+      "attendanceRate": 72,
+      "scholarship": false
+    },
+    {
+      "id": "16",
+      "name": "Paula Mitchell",
+      "gender": "Female",
+      "fieldOfStudy": "Computer Science",
+      "grade": 94,
+      "graduationYear": 2022,
+      "attendanceRate": 96,
+      "scholarship": true
+    },
+    {
+      "id": "17",
+      "name": "Quentin Blake",
+      "gender": "Male",
+      "fieldOfStudy": "Mechanical Engineering",
+      "grade": 77,
+      "graduationYear": 2019,
+      "attendanceRate": 55,
+      "scholarship": false
+    },
+    {
+      "id": "18",
+      "name": "Rachel Green",
+      "gender": "Female",
+      "fieldOfStudy": "Mathematics",
+      "grade": 86,
+      "graduationYear": 2024,
+      "attendanceRate": 89,
+      "scholarship": true
+    },
+    {
+      "id": "19",
+      "name": "Samuel Adams",
+      "gender": "Male",
+      "fieldOfStudy": "Computer Science",
+      "grade": 89,
+      "graduationYear": 2021,
+      "attendanceRate": 74,
+      "scholarship": true
+    },
+    {
+      "id": "bba7",
+      "name": "ahmad",
+      "gender": "Male",
+      "fieldOfStudy": "sanaye",
+      "grade": 7,
+      "graduationYear": 2022,
+      "attendanceRate": 90,
+      "scholarship": true
+    },
+    {
+      "id": "304f",
+      "name": "ahmad",
+      "gender": "Male",
+      "fieldOfStudy": "Mathematics",
+      "grade": 0,
+      "graduationYear": 2019,
+      "attendanceRate": 90,
+      "scholarship": true
+    }
+  ]
+}

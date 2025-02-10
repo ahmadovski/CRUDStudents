@@ -1,0 +1,85 @@
+:root {
+  --toggle-width: 45px;
+  --toggle-height: calc(var(--toggle-width) / 2);
+  --circle-size: calc(var(--toggle-height) - 2px);
+  --border-radius: calc(var(--toggle-height) / 2);
+}
+
+.toggle-container {
+  position: relative;
+  width: var(--toggle-width);
+  height: var(--toggle-height);
+  border: 1px solid #ccc;
+  background: linear-gradient(
+    to bottom,
+    lightgreen 33.33%,
+    white 33.33%,
+    white 66.66%,
+    red 66.66%
+  );
+  background-size: 100% 300%;
+  background-position: center;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-size 0.3s ease;
+  color: #1f1f1f;
+  font-size: 10px;
+}
+
+.toggle-circle {
+  width: var(--circle-size);
+  height: var(--circle-size);
+  background-color: #e9e9e9;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1px;
+  transition: left 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.toggle-container::before,
+.toggle-container::after {
+  content: "";
+  position: absolute;
+  background-color: red;
+  transition: opacity 0.2s;
+}
+
+.toggle-container::before {
+  height: 20%;
+  width: 100%;
+  left: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.toggle-container::after {
+  height: 100%;
+  width: 15%;
+  left: 65%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.toggle-container.active::before,
+.toggle-container.active::after {
+  opacity: 0;
+}
+
+.toggle-container.active {
+  background-size: 100% 100%;
+}
+
+.toggle-container.active .toggle-circle {
+  left: calc(var(--toggle-width) - var(--circle-size) - 1px);
+}
