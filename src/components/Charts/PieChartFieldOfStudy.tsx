@@ -1,7 +1,11 @@
 import { Card, CardContent, Typography } from "@mui/material";
 import { Pie } from "react-chartjs-2";
 import { Student } from "../../types/student";
+import { Chart as Chartjs } from "chart.js";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 
+//register the data labels for pie chart manually (not included in default chartjs)
+// Chartjs.register(ChartDataLabels);
 type PieChartFieldOfStudyProps = {
   students: Student[];
 };
@@ -30,11 +34,45 @@ const PieChartFieldOfStudy = ({ students }: PieChartFieldOfStudyProps) => {
     ],
   };
 
+  // Options to display percentages on the chart
+  const options = {
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (context: any) {
+            const label = context.label || "";
+            const value = context.raw || 0;
+            const total = context.dataset.data.reduce(
+              (acc: number, val: number) => acc + val,
+              0
+            );
+            const percentage = ((value / total) * 100).toFixed(2);
+            return `${label}: ${percentage}%`;
+          },
+        },
+      },
+      datalabels: {
+        formatter: function (value: number, ctx: any) {
+          const total = ctx.dataset.data.reduce(
+            (acc: number, val: number) => acc + val,
+            0
+          );
+          const percentage = ((value / total) * 100).toFixed(2);
+          return `${percentage}%`;
+        },
+        color: "white",
+        font: {
+          weight: 700,
+        },
+      },
+    },
+  };
+
   return (
     <Card>
       <CardContent>
         <Typography variant='h6'>Students per Field of Study</Typography>
-        <Pie data={data} />
+        <Pie data={data} options={options} />
       </CardContent>
     </Card>
   );
