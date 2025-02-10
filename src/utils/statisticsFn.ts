@@ -41,7 +41,7 @@ export const getTopPerformers = (
   console.log(students, "from fn");
 
   return (
-    students
+    [...students] //we need deep copy !otherwise mutates the students !
       //TODO error here
       .sort((a, b) => b.grade - a.grade)
       .slice(0, topN)

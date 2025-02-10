@@ -1,5 +1,6 @@
 import * as XLSX from "xlsx";
 import { Student } from "../types/student";
+import { toast } from "react-toastify";
 
 export const exportStudentsToExcel = async (students: Student[]) => {
   // Convert data to a worksheet
@@ -33,8 +34,10 @@ export const exportStudentsToExcel = async (students: Student[]) => {
       const writable = await fileHandle.createWritable();
       await writable.write(blob);
       await writable.close();
+      toast.success("excel file successfuly saved.");
     } catch (error) {
       console.error("File save canceled or failed:", error);
+      toast.error("File save canceled or failed.");
     }
   } else {
     // Fallback: Use file-saver if the API is not available
@@ -44,5 +47,6 @@ export const exportStudentsToExcel = async (students: Student[]) => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    toast.success("excel file successfuly saved.");
   }
 };

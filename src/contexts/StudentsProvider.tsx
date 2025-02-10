@@ -8,6 +8,7 @@ import {
 } from "../services/studentService";
 import { Student } from "../types/student";
 import { studentsReducer } from "./StudentsReducer";
+import { toast } from "react-toastify";
 
 const initialState = { students: [], selectedStudents: [] };
 
@@ -16,8 +17,13 @@ export const StudentsProvider = ({ children }: { children: ReactNode }) => {
   // console.log(state.students, "from PRovider");
 
   const fetchStudents = async () => {
-    const fetchedStudents = await getStudents();
-    dispatch({ type: "SET_STUDENTS", payload: fetchedStudents });
+    try {
+      const fetchedStudents = await getStudents();
+      dispatch({ type: "SET_STUDENTS", payload: fetchedStudents });
+    } catch (error) {
+      toast.error("Failed to load students!");
+      console.log(error);
+    }
   };
 
   const setSelectedStudents = (selectedStudents: Student[]) => {
@@ -25,18 +31,36 @@ export const StudentsProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const addStudent = async (newStudent: Omit<Student, "id">) => {
-    const createdStudent = await createStudent(newStudent);
-    dispatch({ type: "ADD_STUDENT", payload: createdStudent });
+    try {
+      const createdStudent = await createStudent(newStudent);
+      dispatch({ type: "ADD_STUDENT", payload: createdStudent });
+      toast.success("Student added successfully!");
+    } catch (error) {
+      toast.error("Failed to add student!");
+      console.log(error);
+    }
   };
 
   const editStudent = async (updatedStudent: Student) => {
-    const result = await updateStudent(updatedStudent.id, updatedStudent);
-    dispatch({ type: "UPDATE_STUDENT", payload: result });
+    try {
+      const result = await updateStudent(updatedStudent.id, updatedStudent);
+      dispatch({ type: "UPDATE_STUDENT", payload: result });
+      toast.success("Student updated successfully!");
+    } catch (error) {
+      toast.error("Failed to update student!");
+      console.log(error);
+    }
   };
 
   const removeStudent = async (id: Student["id"]) => {
-    await deleteStudent(id);
-    dispatch({ type: "DELETE_STUDENT", payload: id });
+    try {
+      await deleteStudent(id);
+      dispatch({ type: "DELETE_STUDENT", payload: id });
+      toast.success("Student deleted successfully!");
+    } catch (error) {
+      toast.error("Failed to delete student!");
+      console.log(error);
+    }
   };
 
   useEffect(() => {

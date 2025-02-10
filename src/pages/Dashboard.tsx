@@ -35,7 +35,7 @@ const Dashboard = () => {
             {/* Stats */}
             <Box>
               <StatCardAverageGrade students={data} />
-              {/* <StatCardTopPerformers students={students} /> */}
+              <StatCardTopPerformers students={students} />
             </Box>
           </Grid>
         </Grid>
