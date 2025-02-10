@@ -1,38 +1,35 @@
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
-import LanguageSwitcher from "./LanguageSwitcher";
+import Toolbar from "@mui/material/Toolbar";
+// import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import {
-  Divider,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-} from "@mui/material";
+import LanguageSwitcher from "./LanguageSwitcher";
+// import {
+//   Divider,
+//   List,
+//   ListItem,
+//   ListItemButton,
+//   ListItemText,
+// } from "@mui/material";
 const pages = [
   { title: "Home", path: "/" },
   { title: "Dashboard", path: "/dashboard" },
 ];
 
-const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
+// const navItems = ["Home", "About", "Contact"];
 
 export default function ButtonAppBar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  // const [mobileOpen, setMobileOpen] = useState(false);
 
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
-  };
+  // const handleDrawerToggle = () => {
+  //   setMobileOpen((prevState) => !prevState);
+  // };
 
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant='h6' sx={{ my: 2 }}>
+  // const drawer = (
+  //   <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+  {
+    /* <Typography variant='h6' sx={{ my: 2 }}>
         MUI
       </Typography>
       <Divider />
@@ -45,22 +42,23 @@ export default function ButtonAppBar() {
           </ListItem>
         ))}
       </List>
-    </Box>
-  );
+    </Box> */
+  }
+  // );
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position='static' component='nav'>
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             onClick={handleDrawerToggle}
             size='large'
             edge='start'
             color='inherit'
             aria-label='menu'
             sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
+          > */}
+          {/* <MenuIcon /> */}
+          {/* </IconButton> */}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button

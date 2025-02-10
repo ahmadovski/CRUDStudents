@@ -7,7 +7,6 @@ import AttendanceVsGradeChart from "../components/Charts/AttendanceVsGradeChart"
 import BarChartStudentGrades from "../components/Charts/BarChartStudentGrades";
 import StatCardAverageGrade from "../components/StatCards/StatCardAverageGrade";
 import StatCardTopPerformers from "../components/StatCards/StatCardTopPerformers";
-import { useEffect } from "react";
 
 const Dashboard = () => {
   const { students, selectedStudents } = useStudents();

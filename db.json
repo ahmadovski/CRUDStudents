@@ -9,9 +9,9 @@
   "students": [
     {
       "id": "7",
-      "name": "George Miller",
+      "name": "George milner",
       "gender": "Male",
-      "fieldOfStudy": "Computer Science",
+      "fieldOfStudy": "Mathematics",
       "grade": 76,
       "graduationYear": 2021,
       "attendanceRate": 65,

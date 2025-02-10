@@ -46,7 +46,7 @@ const StudentsTable = ({ students, onEdit, onDelete }: StudentsTableProps) => {
       headerName: "Scholarship",
       width: 120,
       //TODO change to icons
-      valueGetter: (value, row) => (row.scholarship ? "Yes" : "No"),
+      valueGetter: (_, row) => (row.scholarship ? "Yes" : "No"),
     },
     {
       field: "actions",
