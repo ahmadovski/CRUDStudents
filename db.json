@@ -126,26 +126,6 @@
       "graduationYear": 2021,
       "attendanceRate": 74,
       "scholarship": true
-    },
-    {
-      "id": "bba7",
-      "name": "ahmad",
-      "gender": "Male",
-      "fieldOfStudy": "sanaye",
-      "grade": 7,
-      "graduationYear": 2022,
-      "attendanceRate": 90,
-      "scholarship": true
-    },
-    {
-      "id": "304f",
-      "name": "ahmad",
-      "gender": "Male",
-      "fieldOfStudy": "Mathematics",
-      "grade": 0,
-      "graduationYear": 2019,
-      "attendanceRate": 90,
-      "scholarship": true
     }
   ]
 }

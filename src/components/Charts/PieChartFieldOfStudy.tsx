@@ -1,8 +1,8 @@
 import { Card, CardContent, Typography } from "@mui/material";
 import { Pie } from "react-chartjs-2";
 import { Student } from "../../types/student";
-import { Chart as Chartjs } from "chart.js";
-import ChartDataLabels from "chartjs-plugin-datalabels";
+// import { Chart as Chartjs } from "chart.js";
+// import ChartDataLabels from "chartjs-plugin-datalabels";
 
 //register the data labels for pie chart manually (not included in default chartjs)
 // Chartjs.register(ChartDataLabels);

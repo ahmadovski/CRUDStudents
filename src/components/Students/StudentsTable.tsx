@@ -1,9 +1,10 @@
 import Box from "@mui/material/Box";
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { DataGrid, GridColDef, GridRowSelectionModel } from "@mui/x-data-grid";
 import { Button } from "@mui/material";
 import { Student } from "../../types/student";
 import Modal from "../UI/Modal";
 import { useState } from "react";
+import { useStudents } from "../../hooks/useStudents";
 
 type StudentsTableProps = {
   students: Student[];
@@ -16,6 +17,8 @@ const StudentsTable = ({ students, onEdit, onDelete }: StudentsTableProps) => {
   const [selectedIDForDelete, setSelectedIDForDelete] = useState<
     Student["id"] | null
   >(null);
+  const { setSelectedStudents, selectedStudents } = useStudents();
+
   const columns: GridColDef<Student>[] = [
     {
       field: "id",
@@ -90,16 +93,23 @@ const StudentsTable = ({ students, onEdit, onDelete }: StudentsTableProps) => {
             },
           },
         }}
+        rowSelectionModel={
+          //for pre selection
+          selectedStudents.length === 0
+            ? []
+            : selectedStudents.map((selectedStudents) => selectedStudents.id)
+        }
+        onRowSelectionModelChange={(selectionModel: GridRowSelectionModel) => {
+          // Convert selected row IDs into student objects
+          const selectedStudents = students.filter(
+            (
+              student //selectionModel is array of selected Id's[]
+            ) => selectionModel.includes(student.id)
+          );
+          setSelectedStudents(selectedStudents);
+        }}
+        checkboxSelection
 
-        // //TODO : you can get selected rows here to save as excel instead of all of them (maybe add to context)
-        // onRowSelectionModelChange={(selectionModel: GridRowSelectionModel) => {
-        //   // Convert selected row IDs into student objects
-        //   const selectedStudents = students.filter((student) =>  //selectionModel is array of selected Id's[]
-        //     selectionModel.includes(student.id)
-        //   );
-        //   setSelectedRows(selectedStudents);
-        // }}
-        // checkboxSelection
         // disableRowSelectionOnClick // Prevents row selection
         // hideFooterSelectedRowCount // Removes the "x rows selected" text in footer
       />

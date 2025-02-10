@@ -29,7 +29,8 @@ const Home = () => {
       addStudent(student);
     }
   };
-  const { addStudent, editStudent, removeStudent, students } = useStudents();
+  const { addStudent, editStudent, removeStudent, students, selectedStudents } =
+    useStudents();
 
   const { t } = useTranslation();
 
@@ -62,6 +63,14 @@ const Home = () => {
           onClick={() => exportStudentsToExcel(students)}
         >
           Save as Excel
+        </Button>
+        <Button
+          variant='outlined'
+          color='secondary'
+          disabled={selectedStudents.length === 0}
+          onClick={() => exportStudentsToExcel(selectedStudents)}
+        >
+          Save Selected as Excel
         </Button>
       </Box>
     </>

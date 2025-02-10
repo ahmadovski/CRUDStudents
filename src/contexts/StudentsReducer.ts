@@ -3,18 +3,24 @@ import { Student } from "../types/student";
 // Reducer actions
 type Action =
   | { type: "SET_STUDENTS"; payload: Student[] }
+  | { type: "SET_SELECTED_STUDENTS"; payload: Student[] }
   | { type: "ADD_STUDENT"; payload: Student }
   | { type: "UPDATE_STUDENT"; payload: Student }
   | { type: "DELETE_STUDENT"; payload: Student["id"] };
 
 // State type
-type State = { students: Student[] };
+type State = { students: Student[]; selectedStudents: Student[] };
 
 // Reducer function
 export const studentsReducer = (state: State, action: Action): State => {
   switch (action.type) {
     case "SET_STUDENTS":
       return { ...state, students: action.payload };
+    case "SET_SELECTED_STUDENTS":
+      return {
+        ...state,
+        selectedStudents: action.payload,
+      };
     case "ADD_STUDENT":
       return {
         ...state,

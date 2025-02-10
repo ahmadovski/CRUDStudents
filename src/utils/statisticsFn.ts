@@ -38,10 +38,15 @@ export const getTopPerformers = (
   students: Student[],
   topN: number = 5
 ): { name: string; grade: number }[] => {
-  return students
-    .sort((a, b) => b.grade - a.grade)
-    .slice(0, topN)
-    .map((student) => ({ name: student.name, grade: student.grade }));
+  console.log(students, "from fn");
+
+  return (
+    students
+      //TODO error here
+      .sort((a, b) => b.grade - a.grade)
+      .slice(0, topN)
+      .map((student) => ({ name: student.name, grade: student.grade }))
+  );
 };
 
 export const calculatePassFailRate = (

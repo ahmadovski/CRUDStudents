@@ -6,15 +6,8 @@ import AppRoutes from "./routes";
 import NavBar from "./components/NavBar";
 import { ItemsProvider } from "./contexts/ItemsProvider";
 import { StudentsProvider } from "./contexts/StudentsProvider";
-import "chart.js/auto";
-// import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import "chart.js/auto"; // register default plagins automaticaly
 
-// ChartJS.register(
-//   ArcElement,
-//   Tooltip,
-//   Legend
-//   // ChartDataLabels // Register the plugin here locally
-// );
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
