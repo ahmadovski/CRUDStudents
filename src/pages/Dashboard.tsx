@@ -15,30 +15,32 @@ const Dashboard = () => {
 
   return (
     <>
-      <Heading title='Dashboard' />
-      <Container>
-        <Grid container spacing={3}>
-          {/* Pie Chart - Students per Field of Study */}
-          <Grid size={4}>
-            <PieChartFieldOfStudy students={data} />
-          </Grid>
+      <Box display='flex' flexDirection='column' gap={6} sx={{ marginTop: 6 }}>
+        <Heading title='Dashboard' />
+        <Container>
+          <Grid container spacing={3}>
+            <Grid size={8}>
+              <BarChartStudentGrades students={data} />
+            </Grid>
+            <Grid size={4}>
+              {/* Stats */}
+              <Box>
+                <StatCardAverageGrade students={data} />
+                <StatCardTopPerformers students={students} />
+              </Box>
+            </Grid>
+            {/* Pie Chart - Students per Field of Study */}
+            <Grid size={4}>
+              <PieChartFieldOfStudy students={data} />
+            </Grid>
 
-          {/* Scatter Chart - Attendance vs Grade */}
-          <Grid size={8}>
-            <AttendanceVsGradeChart students={data} />
+            {/* Scatter Chart - Attendance vs Grade */}
+            <Grid size={8}>
+              <AttendanceVsGradeChart students={data} />
+            </Grid>
           </Grid>
-          <Grid size={8}>
-            <BarChartStudentGrades students={data} />
-          </Grid>
-          <Grid size={4}>
-            {/* Stats */}
-            <Box>
-              <StatCardAverageGrade students={data} />
-              <StatCardTopPerformers students={students} />
-            </Box>
-          </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      </Box>
     </>
   );
 };
