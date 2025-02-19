@@ -9,22 +9,27 @@ import NavBar from "./components/NavBar";
 import { ItemsProvider } from "./contexts/ItemsProvider";
 import { StudentsProvider } from "./contexts/StudentsProvider";
 import "chart.js/auto"; // register default plagins automaticaly
+import AuthProvider from "./contexts/AuthProvider";
+import { ReactNode } from "react";
 
-const App = () => {
+const App = ({ children }: { children: ReactNode }) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <ToastContainer position='top-right' autoClose={3000} />
-      <StudentsProvider>
-        <ItemsProvider>
-          <Router>
+      <AuthProvider>
+        {/* <Router> */}
+        <StudentsProvider>
+          <ItemsProvider>
             <Container>
-              <NavBar />
-              <AppRoutes />
+              {children}
+              {/* <NavBar /> */}
+              {/* <AppRoutes /> */}
             </Container>
-          </Router>
-        </ItemsProvider>
-      </StudentsProvider>
+          </ItemsProvider>
+        </StudentsProvider>
+        {/* </Router> */}
+      </AuthProvider>
     </ThemeProvider>
   );
 };

@@ -8,16 +8,6 @@
   ],
   "students": [
     {
-      "id": "7",
-      "name": "George milner",
-      "gender": "Male",
-      "fieldOfStudy": "Mathematics",
-      "grade": 76,
-      "graduationYear": 2021,
-      "attendanceRate": 65,
-      "scholarship": true
-    },
-    {
       "id": "8",
       "name": "Hannah Baker",
       "gender": "Female",
@@ -126,6 +116,26 @@
       "graduationYear": 2021,
       "attendanceRate": 74,
       "scholarship": true
+    },
+    {
+      "id": "c7ce",
+      "name": "hasan",
+      "gender": "Male",
+      "fieldOfStudy": "Computer Science",
+      "grade": 100,
+      "graduationYear": 2023,
+      "attendanceRate": 85,
+      "scholarship": true
+    },
+    {
+      "id": "8081",
+      "name": "Ali",
+      "gender": "Male",
+      "fieldOfStudy": "Computer Science",
+      "grade": 99,
+      "graduationYear": 2025,
+      "attendanceRate": 100,
+      "scholarship": false
     }
   ]
 }

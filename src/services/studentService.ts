@@ -1,8 +1,8 @@
 import axios from "axios";
 import { Student } from "../types/student";
 
-const API_URL = "https://crudstudents-m9bj.onrender.com/students"; // Update endpoint
-// const API_URL = "http://localhost:3000/students"; // Update endpoint
+// const API_URL = "https://crudstudents-m9bj.onrender.com/students"; // Update endpoint
+const API_URL = "http://localhost:3000/students"; // Update endpoint
 
 export const getStudents = async (): Promise<Student[]> => {
   const response = await axios.get(API_URL);
